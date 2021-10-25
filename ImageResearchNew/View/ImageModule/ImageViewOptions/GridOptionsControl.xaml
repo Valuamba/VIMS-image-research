@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="ImageResearchNew.View.ImageModule.ImageViewOptions.GridOptionsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ImageResearchNew.View.ImageModule.ImageViewOptions"
+             xmlns:ivovm="clr-namespace:ImageResearchNew.ViewModel.ImageModule.ImageViewOptions"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             d:DataContext="{d:DesignInstance ivovm:GridOptionsViewModel}">
+    <UserControl.Resources>
+        <Style x:Key="optionsLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <!--<Setter Property="Margin" Value="2"/>-->
+
+        </Style>
+
+        <Style x:Key="optionsCheckboxStyle" TargetType="CheckBox">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <!--<Setter Property="Margin" Value="2"/>-->
+        </Style>
+
+        <Style x:Key="optionsTextBoxStyle" TargetType="ComboBox">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+
+    </UserControl.Resources>
+    <WrapPanel Orientation="Horizontal" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal">
+            <Label Grid.Column="0" Content="Сетка" Style="{StaticResource optionsLabelStyle}" VerticalAlignment="Center"/>
+            <CheckBox Grid.Column="1" IsChecked="{Binding IsHidden}" Style="{StaticResource optionsCheckboxStyle}" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Размер сетки" Style="{StaticResource optionsLabelStyle}"/>
+            <ComboBox ItemsSource="{Binding GridValues}"
+                  SelectedItem="{Binding GridSize}" 
+                  Style="{StaticResource optionsTextBoxStyle}" SelectedIndex="0"/>
+        </StackPanel>
+    </WrapPanel>
+</UserControl>

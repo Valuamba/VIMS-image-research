@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F90FEF1A-579D-4120-88E1-8DDCD044C77E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ImageResearchNew</RootNamespace>
+    <AssemblyName>ImageResearchNew</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Emgu.CV.Bitmap, Version=4.5.1.4349, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>..\packages\Emgu.CV.Bitmap.4.5.1.4349\lib\netstandard2.0\Emgu.CV.Bitmap.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.Platform.NetStandard, Version=4.5.1.4349, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>..\packages\Emgu.CV.4.5.1.4349\lib\netstandard2.0\Emgu.CV.Platform.NetStandard.dll</HintPath>
+    </Reference>
+    <Reference Include="HamburgerMenu, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HamburgerMenu.0.1.0\lib\net40\HamburgerMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="Ikc5.TypeLibrary, Version=1.0.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ikc5.TypeLibrary.1.0.0.10\lib\net451\Ikc5.TypeLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=2.0.0.2422, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.2.0.0\lib\net452\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.0.0.2422, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.4.0.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot, Version=2.0.0.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.Core.2.0.0\lib\net45\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Wpf, Version=2.0.0.0, Culture=neutral, PublicKeyToken=75e952ba404cdbb0, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.Wpf.2.0.0\lib\net45\OxyPlot.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.5.0.1\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFSplitView">
+      <HintPath>D:\EducationDotNetCore\WPFSplitView\WPFSplitView\bin\Debug\net461\WPFSplitView.dll</HintPath>
+    </Reference>
+    <Reference Include="WriteableBitmapEx.Wpf, Version=1.6.7.0, Culture=neutral, PublicKeyToken=50375ca6144f1c69, processorArchitecture=MSIL">
+      <HintPath>..\packages\WriteableBitmapEx.1.6.7\lib\net40\WriteableBitmapEx.Wpf.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Converters\IsHiddenToColorConverter.cs" />
+    <Compile Include="Model\CompareType.cs" />
+    <Compile Include="Model\ColorModels\ColorModel.cs" />
+    <Compile Include="Model\ColorModels\Rgb.cs" />
+    <Compile Include="Model\ColorModels\Yuv.cs" />
+    <Compile Include="ViewModel\ImageModule\Channels\ChannelsViewModel.cs" />
+    <Compile Include="ViewModel\ImageModule\ImageCharts\OscilloscopeChartViewModel.cs" />
+    <Compile Include="View\Converters\BeginCountByZeroConverter.cs" />
+    <Compile Include="View\Converters\SelectionModeConverter.cs" />
+    <Compile Include="View\ImageModule\Channels\ChannelsViewControl.xaml.cs">
+      <DependentUpon>ChannelsViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\Controls\TargetImage.xaml.cs">
+      <DependentUpon>TargetImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\ImageChart\OscilloscopeChart.xaml.cs">
+      <DependentUpon>OscilloscopeChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\LayersBlockViewModel.xaml.cs">
+      <DependentUpon>LayersBlockViewModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\Windows\CompareWindow.xaml.cs">
+      <DependentUpon>CompareWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\Windows\PixelsWindow.xaml.cs">
+      <DependentUpon>PixelsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Pixel.cs" />
+    <Compile Include="Converters\BaseGenericConverter.cs" />
+    <Compile Include="Converters\ColorToBrushConverter.cs" />
+    <Compile Include="Converters\DecreaseDoubleConverter.cs" />
+    <Compile Include="Converters\DivideDoubleConverter.cs" />
+    <Compile Include="Converters\MaxValueOfArrayConverter.cs" />
+    <Compile Include="Converters\OperationGenericConverter.cs" />
+    <Compile Include="Converters\ValueGenericConverter.cs" />
+    <Compile Include="Helpers\IconPathHelper.cs" />
+    <Compile Include="Helpers\ToolTipHelper.cs" />
+    <Compile Include="Model\DrawLayer.cs" />
+    <Compile Include="Model\ImageManagerTools\CompareImage.cs" />
+    <Compile Include="Model\ImageManagerTools\CopyImage.cs" />
+    <Compile Include="Model\ImageManagerTools\DeleteImage.cs" />
+    <Compile Include="Model\ImageManagerTools\ImageManagerTool.cs" />
+    <Compile Include="Model\ImagePlaceTools\FreeHandTool.cs" />
+    <Compile Include="Model\ImagePlaceTools\ImagePlaceTool.cs" />
+    <Compile Include="Model\ImagePlaceTools\RegionInfoTool.cs" />
+    <Compile Include="Model\ImagePlaceTools\RegionsTool.cs" />
+    <Compile Include="Model\ImageProcessors\ImageQuantization.cs" />
+    <Compile Include="Model\ImageProcessors\ImageSubsampling.cs" />
+    <Compile Include="Model\Layer.cs" />
+    <Compile Include="Model\LayerTools\DeleteLayerTool.cs" />
+    <Compile Include="Model\LayerTools\HideLayerTool.cs" />
+    <Compile Include="Model\LayerTools\LayerTool.cs" />
+    <Compile Include="Helpers\DialogHelper.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Helpers\UnhandledException.cs" />
+    <Compile Include="Model\ImageProcessorInfo.cs" />
+    <Compile Include="Model\ImageProcessors\ColorConversion.cs" />
+    <Compile Include="Model\ImageProcessors\ImageConvolution.cs" />
+    <Compile Include="Model\ImageProcessors\ImageProcessor.cs" />
+    <Compile Include="Model\ViewOptions\GridOptions.cs" />
+    <Compile Include="ViewModel\ImageModule\ImageCharts\HistogramChartViewModel.cs" />
+    <Compile Include="ViewModel\ImageModule\ImageCharts\VectorscopeChartViewModel.cs" />
+    <Compile Include="ViewModel\ImageModule\ImageOscillographViewModel.cs" />
+    <Compile Include="ViewModel\ImageModule\ImagePlaceToolsBlockViewModel.cs" />
+    <Compile Include="ViewModel\ImageModule\ImagePlaceViewModel.cs" />
+    <Compile Include="ViewModel\ImageModule\ImageProcessors\ImageProcessorViewModel.cs" />
+    <Compile Include="Model\ColorConversionCode.cs" />
+    <Compile Include="Utilities\CollectionExtensions.cs" />
+    <Compile Include="ViewModel\MVVM\DelegateCommand.cs" />
+    <Compile Include="ViewModel\DynamicGridViewModel.cs" />
+    <Compile Include="ViewModel\ImageModule\ImageProcessors\ColorConversionViewModel.cs" />
+    <Compile Include="ViewModel\ImageModule\ImageProcessors\ImageConvolutionViewModel.cs" />
+    <Compile Include="ViewModel\ImageModule\ImageProcessorBlockViewModel.cs" />
+    <Compile Include="ViewModel\ImageModule\ImageProcessors\ImageQuantizationViewModel.cs" />
+    <Compile Include="ViewModel\ImageModule\ImageProcessors\ImageSubsamplingViewModel.cs" />
+    <Compile Include="ViewModel\ImageModule\ImageViewOptionsViewModel.cs" />
+    <Compile Include="ViewModel\ImageModule\ImageViewOptions\GridOptionsViewModel.cs" />
+    <Compile Include="ViewModel\ImageModule\ImageViewOptions\OptionsViewModel.cs" />
+    <Compile Include="ViewModel\WorkPageViewModel.cs" />
+    <Compile Include="View\Converters\BindingConverter.cs" />
+    <Compile Include="View\Converters\ChainConverter.cs" />
+    <Compile Include="View\Converters\ListToValueConverter.cs" />
+    <Compile Include="View\Converters\ObjectToTypeConverter.cs" />
+    <Compile Include="View\Converters\SwitchConverter.cs" />
+    <Compile Include="View\Converters\TypeToDataTemplateConverter.cs" />
+    <Compile Include="View\Converters\ValueConverter.cs" />
+    <Compile Include="View\DynamicGridView.xaml.cs">
+      <DependentUpon>DynamicGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Converters\BitmapToBitmapSourceConverter.cs" />
+    <Compile Include="View\ImageModule\Controls\CustomImage.cs" />
+    <Compile Include="View\ImageModule\Controls\VectoroscopeChartControl.cs" />
+    <Compile Include="View\ImageModule\ImageBlockProcessorControl.xaml.cs">
+      <DependentUpon>ImageBlockProcessorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\ImageChart\HistogramChart.xaml.cs">
+      <DependentUpon>HistogramChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\ImageChart\VectorscopeChart.xaml.cs">
+      <DependentUpon>VectorscopeChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\ImageManagerControl.xaml.cs">
+      <DependentUpon>ImageManagerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\ImageOscillographControl.xaml.cs">
+      <DependentUpon>ImageOscillographControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\ImagePlaceToolsBlockControl.xaml.cs">
+      <DependentUpon>ImagePlaceToolsBlockControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\ImagePlaceView.xaml.cs">
+      <DependentUpon>ImagePlaceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\ImageProcessorControl.xaml.cs">
+      <DependentUpon>ImageProcessorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\ImageProcessors\ColorConversionControl.xaml.cs">
+      <DependentUpon>ColorConversionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\ImageProcessors\ImageConvolutionControl.xaml.cs">
+      <DependentUpon>ImageConvolutionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\ImageProcessors\ImageQuantizationControl.xaml.cs">
+      <DependentUpon>ImageQuantizationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\ImageProcessors\ImageSubsamplingControl.xaml.cs">
+      <DependentUpon>ImageSubsamplingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\ImageViewOptionsBlockControl.xaml.cs">
+      <DependentUpon>ImageViewOptionsBlockControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\ImageViewOptions\GridOptionsControl.xaml.cs">
+      <DependentUpon>GridOptionsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\ImageViewTools\GridToolControl.xaml.cs">
+      <DependentUpon>GridToolControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\LayerTools\DeleteLayerControl.xaml.cs">
+      <DependentUpon>DeleteLayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\LayerTools\HideLayerControl.xaml.cs">
+      <DependentUpon>HideLayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\LayerTools\PropertiesOfLayerControl.xaml.cs">
+      <DependentUpon>PropertiesOfLayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageModule\Windows\OscilloscopeWindow.xaml.cs">
+      <DependentUpon>OscilloscopeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Utilities\DependencyPropertyUtility.cs" />
+    <Page Include="View\ImageModule\Channels\ChannelsViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\Controls\TargetImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\ImageChart\OscilloscopeChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\LayersBlockViewModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\Windows\CompareWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\Windows\PixelsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\DynamicGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\ImageBlockProcessorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\ImageChart\HistogramChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\ImageChart\VectorscopeChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\ImageManagerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\ImageOscillographControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\ImagePlaceToolsBlockControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\ImagePlaceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\ImageProcessorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\ImageProcessors\ColorConversionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\ImageProcessors\ImageConvolutionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\ImageProcessors\ImageQuantizationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\ImageProcessors\ImageSubsamplingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\ImageViewOptionsBlockControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\ImageViewOptions\GridOptionsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\ImageViewTools\GridToolControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\LayerTools\DeleteLayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\LayerTools\HideLayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\LayerTools\PropertiesOfLayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageModule\Windows\OscilloscopeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\freehand.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\rectangle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cursor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\click.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImageResearch.Engine\ImageResearch.Engine.csproj">
+      <Project>{6a2574bd-d050-4897-834e-9b35246bb3a6}</Project>
+      <Name>ImageResearch.Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\oscillogrph.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\hide.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\trash.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\compare.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\copy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets'))" />
+  </Target>
+</Project>

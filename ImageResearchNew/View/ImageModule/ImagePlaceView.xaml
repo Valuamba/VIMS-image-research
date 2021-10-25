@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="ImageResearchNew.View.ImageModule.ImagePlaceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ImageResearchNew.View.ImageModule"
+             xmlns:c="clr-namespace:ImageResearchNew.View.Converters"
+             xmlns:vm="clr-namespace:ImageResearchNew.ViewModel.ImageModule"
+             xmlns:owncontrol="clr-namespace:ImageResearchNew.View.ImageModule.Controls" xmlns:channels="clr-namespace:ImageResearchNew.View.ImageModule.Channels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             d:DataContext="{d:DesignInstance vm:ImagePlaceViewModel}">
+
+    <UserControl.Resources>
+        <c:BitmapToBitmapSourceConverter x:Key="bitmapToBitmapSourceConverter"/>
+
+        <Style TargetType="{x:Type ListViewItem}" x:Key="ContainerStyle">
+            <Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="CornflowerBlue"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="CornflowerBlue"/>
+            </Style.Resources>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <channels:ChannelsViewControl DataContext="{Binding ModifiedImageViewModel}"/>
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <ScrollViewer Margin="5" VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Auto">
+            <owncontrol:CustomImage AutomationProperties.AutomationId="CanvasImage"
+                   x:Name="SoruceImage"
+                   Source="{Binding Path=SourceImage, Converter={StaticResource bitmapToBitmapSourceConverter}}"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Width="778"
+                   Height="576"/>
+        </ScrollViewer>
+        <ScrollViewer Margin="5" Grid.Row="1" VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Auto">
+        <owncontrol:CustomImage AutomationProperties.AutomationId="CanvasImage"
+                   x:Name="CustomImage"
+                   Source="{Binding Path=ViewingImage, Converter={StaticResource bitmapToBitmapSourceConverter}}"
+                   LayersFactories="{Binding AppliedDrawingLayers}"
+                   GridLayer="{Binding GridLayer}"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   MouseDown="EditedImage_MouseDown"
+                   MouseMove="EditedImage_MouseMove"
+                   MouseUp="EditedImage_MouseUp"
+                   Width="778"
+                   Height="576"/>
+        </ScrollViewer>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>
